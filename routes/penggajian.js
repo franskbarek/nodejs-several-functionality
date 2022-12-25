@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const PTKP = [
+const _ptkp = [
   {
     status: "Belum kawin",
     simbol: "TK",
@@ -18,7 +18,7 @@ const PTKP = [
   },
 ];
 
-const TARIF_PAJAK_TAHUNAN = [
+const _tarifPajakTahunan = [
   {
     rentangPenghasilanNetto: [10, 30, 50], // ? mungkin tepat jika meletakan sequence number pada obj arr
     tarifPajak: 5 / 100,
@@ -33,7 +33,7 @@ const TARIF_PAJAK_TAHUNAN = [
   },
 ];
 
-const RUMUS_PAJAK_PENGHASILAN = [
+const _rumusPajakPenghasilan = [
   {
     layer: 50,
     rumus: (5 / 100) * 50,
@@ -52,15 +52,23 @@ router.post("/", async (req, res) => {
     const nettoPerbulanFromBody = await req.body.komponengaji[0].nettoPerbulan;
     const simbolFromBody = await req.body.komponengaji[1].simbol;
     const statusFromBody = await req.body.komponengaji[2].status;
-    for (let i = 0; i < TARIF_PAJAK_TAHUNAN.length; i++) {
-      for (let j = 0; j < TARIF_PAJAK_TAHUNAN.length; j++) {
-        for (let k = 0; k < PTKP.length; k++) {
-          if (nettoPerbulanFromBody == TARIF_PAJAK_TAHUNAN[i].rentangPenghasilanNetto[[j]] && simbolFromBody == PTKP[k].simbol && statusFromBody == PTKP[k].status)
-            return res.status(201).json(TARIF_PAJAK_TAHUNAN[i].rentangPenghasilanNetto[[j]] * 12 - PTKP[k].tarif);
+    for (let i = 0; i < _tarifPajakTahunan.length; i++) {
+      for (let j = 0; j < _tarifPajakTahunan.length; j++) {
+        for (let k = 0; k < _ptkp.length; k++) {
+          if (nettoPerbulanFromBody == _tarifPajakTahunan[i].rentangPenghasilanNetto[[j]] && simbolFromBody == _ptkp[k].simbol && statusFromBody == _ptkp[k].status) {
+            const gajiPerbulan = _tarifPajakTahunan[i].rentangPenghasilanNetto[[j]];
+            const gajiPertahun = gajiPerbulan * 12;
+            const pajakPertahun = gajiPertahun - _ptkp[k].tarif;
+            const pajakPertahunFix = 2.5 + 35.25; // masih hardcode, compare nilainya masih dipikirkan.
+            const pajakPerbulan = pajakPertahunFix / 12;
+            return res
+              .status(201)
+              .json([{ "Total Gaji Perbulan": gajiPerbulan, "Total Gaji Pertahun": gajiPertahun, "Total Pajak Pertahun belum fix": pajakPertahun, "Total Pajak Pertahun fix": pajakPertahunFix, "Total Pajak Bulan ini": pajakPerbulan }]);
+          }
         }
       }
     }
-    res.status(400).json("Error occured!");
+    res.status(400).json("Error occurred!");
   } catch (err) {
     res.status(500).json(err.message);
   }
