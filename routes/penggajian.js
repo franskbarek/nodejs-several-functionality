@@ -4,7 +4,7 @@ const _ptkp = [
   {
     status: "Belum kawin",
     simbol: "TK",
-    tarif: 25,
+    tarif: 25, // juta
   },
   {
     status: "Sudah kawin dan belum punya anak",
@@ -20,11 +20,11 @@ const _ptkp = [
 
 const _tarifPajakTahunan = [
   {
-    rentangPenghasilanNetto: [10, 30, 50], // ? mungkin tepat jika meletakan sequence number pada obj arr
+    rentangPenghasilanNetto: [30, 40, 50], // juta
     tarifPajak: 5 / 100,
   },
   {
-    rentangPenghasilanNetto: [70, 200, 250],
+    rentangPenghasilanNetto: [100, 150, 250],
     tarifPajak: 10 / 100,
   },
   {
@@ -33,25 +33,26 @@ const _tarifPajakTahunan = [
   },
 ];
 
-const _rumusPajakPenghasilan = [
-  {
-    layer: 50,
-    rumus: (5 / 100) * 50,
-    tarifPajak: 2.5,
-  },
-  {
-    layer: 50 - 250,
-    rumus: (285 - 50) * (15 / 100),
-    tarifPajak: 35.25,
-  },
-];
+const _rumusPajakPenghasilan = (layer) => {
+  const layer50 = layer * (5 / 100);
+  const layerGthen50 = (15 / 100) * (285 - layer);
+  if (layer > 0 && layer <= 49) {
+    return layer50;
+  } else if (layer >= 50 && layer <= 250) {
+    return layer50 + layerGthen50;
+  } else {
+    return;
+  }
+};
 
 //create
-router.post("/", async (req, res) => {
+router.post("/", (req, res) => {
   try {
-    const nettoPerbulanFromBody = await req.body.komponengaji[0].nettoPerbulan;
-    const simbolFromBody = await req.body.komponengaji[1].simbol;
-    const statusFromBody = await req.body.komponengaji[2].status;
+    const nettoPerbulanFromBody = req.body.komponengaji[0].nettoPerbulan;
+    const simbolFromBody = req.body.komponengaji[1].simbol;
+    const statusFromBody = req.body.komponengaji[2].status;
+    const resultPajak = _rumusPajakPenghasilan(nettoPerbulanFromBody);
+
     for (let i = 0; i < _tarifPajakTahunan.length; i++) {
       for (let j = 0; j < _tarifPajakTahunan.length; j++) {
         for (let k = 0; k < _ptkp.length; k++) {
@@ -59,7 +60,7 @@ router.post("/", async (req, res) => {
             const gajiPerbulan = _tarifPajakTahunan[i].rentangPenghasilanNetto[[j]];
             const gajiPertahun = gajiPerbulan * 12;
             const pajakPertahun = gajiPertahun - _ptkp[k].tarif;
-            const pajakPertahunFix = 2.5 + 35.25; // masih hardcode, compare nilainya masih dipikirkan.
+            const pajakPertahunFix = resultPajak;
             const pajakPerbulan = pajakPertahunFix / 12;
             return res
               .status(201)
