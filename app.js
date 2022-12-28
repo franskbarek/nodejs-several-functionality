@@ -7,6 +7,7 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const bookingRouter = require("./routes/booking");
 const penggajianRouter = require("./routes/penggajian");
+const mendeteksiAlergiObatRouter = require("./routes/mendeteksi-alergi-obat");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/bookingkamaroperasi", bookingRouter);
 app.use("/hitunggaji", penggajianRouter);
+app.use("/validasialergiobat", mendeteksiAlergiObatRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
