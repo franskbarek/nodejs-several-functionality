@@ -1,23 +1,40 @@
 const router = require("express").Router();
 
-router.get("/", (req, res) => {
-  const pasien = req.body.pasien;
-  const obat = req.body.resep[0].obat.toLowerCase();
-  const obatList = ["proris", "aspirin"];
+const items = [
+  {
+    namaobat: "paracetamol",
+    kandungan: "aspirin",
+  },
+  {
+    namaobat: "proris",
+    kandungan: "ibuprofin",
+  },
+  {
+    namaobat: "betadin",
+    kandungan: "alcohol",
+  },
+  {
+    namaobat: "bodrex",
+    kandungan: "ctm",
+  },
+];
+
+router.get("/", async (req, res) => {
+  const value = req.body.resep[0].obat.toLowerCase();
   let lo = 0;
-  let hi = obatList.length - 1;
-  console.log(hi);
+  let hi = items.length - 1;
+
   while (lo <= hi) {
     let mid = Math.floor((hi + lo) / 2);
-    if (obatList[mid] == obat) {
-      return res.status(200).json(mid);
-    } else if (obatList[mid] > obat) {
-      res.status(200).json((hi = mid - 1));
+    if (items[mid].namaobat == value) {
+      return res.status(200).json({ namapasien: req.body.pasien.nama, namaobat: items[mid].namaobat, kandunganobat: items[mid].kandungan });
+    } else if (items[mid] > value) {
+      hi = mid - 1;
     } else {
-      res.status(200).json((lo = mid + 1));
+      lo = mid + 1;
     }
   }
-  return res.status(200).json(lo);
+  return res.status(500).json(-1);
 });
 
 module.exports = router;
