@@ -8,6 +8,7 @@ const indexRouter = require("./routes/index");
 const bookingRouter = require("./routes/booking");
 const penggajianRouter = require("./routes/penggajian");
 const mendeteksiAlergiObatRouter = require("./routes/mendeteksi-alergi-obat");
+const memperbaruiDataRouter = require("./routes/memperbarui-data-secara-otomatis-dan-terjadwal");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use("/", indexRouter);
 app.use("/bookingkamaroperasi", bookingRouter);
 app.use("/hitunggaji", penggajianRouter);
 app.use("/validasialergiobat", mendeteksiAlergiObatRouter);
+app.use("/calculateage", memperbaruiDataRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
