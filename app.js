@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
 const indexRouter = require("./routes/index");
-const bookingRouter = require("./routes/booking");
+const penjadwalanRouter = require("./routes/penjadwalan-kamar-operasi");
 const penggajianRouter = require("./routes/penggajian");
 const mendeteksiAlergiObatRouter = require("./routes/mendeteksi-alergi-obat");
 const memperbaruiDataRouter = require("./routes/memperbarui-data-secara-otomatis-dan-terjadwal");
@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/bookingkamaroperasi", bookingRouter);
+app.use("/bookingkamaroperasi", penjadwalanRouter);
 app.use("/hitunggaji", penggajianRouter);
 app.use("/validasialergiobat", mendeteksiAlergiObatRouter);
 app.use("/calculateage", memperbaruiDataRouter);
