@@ -1,49 +1,62 @@
-# Domumentasi teknis
+[![GitHub Stars](https://img.shields.io/github/stars/franskbarek/nodejs-several-functionality.svg)](https://github.com/franskbarek/nodejs-several-functionality) [![GitHub Issues](https://img.shields.io/github/issues/franskbarek/nodejs-several-functionality.svg)](https://github.com/franskbarek/nodejs-several-functionality/issues)
 
-[![GitHub Stars](https://img.shields.io/github/stars/IgorAntun/node-chat.svg)](https://github.com/IgorAntun/node-chat/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/IgorAntun/node-chat.svg)](https://github.com/IgorAntun/node-chat/issues)
+# Dokumentasi Teknis
 
-This is a node.js chat application powered by SockJS and Express that provides the main functions you'd expect from a chat, such as emojis, private messages, an admin system, etc.
+## Tentang Aplikasi
+
+Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan framework Node.js menggunkan Express.js.
 
 ![Chat Preview](http://i.imgur.com/lgRe8z4.png)
 
----
+## Teknologi yang digunakan
 
-## Buy me a coffee
-
-Whether you use this project, have learned something from it, or just like it, please consider supporting it by buying me a coffee, so I can dedicate more time on open-source projects like this :)
-
-<a href="https://www.buymeacoffee.com/igorantun" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-
----
-
-## Features
-
-- Material Design
-- Emoji support
-- User @mentioning
-- Private messaging
-- Message deleting (for admins)
-- Ability to kick/ban users (for admins)
-- See other user's IPs (for admins)
-- Other awesome features yet to be implemented
-
-![User Features](http://i.imgur.com/WbF1fi2.png)
-
-![Admin Features](http://i.imgur.com/xQFaadt.png)
-
-#### There are 3 admin levels:
-
-- **Helper:** Can delete chat messages
-- **Moderator:** The above plus the ability to kick and ban users
-- **Administrator:** All the above plus send global alerts and promote/demote users
+- yarn
+- node.js
+- express.js
+- jest
+- supertest
+- postman
 
 ---
 
-## Setup
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Tabel konten</summary>
+  <ol>
+    <li>
+      <a href="#about-the-app">Tentang Aplikasi</a>
+      <ul>
+        <li><a href="#built-with">Teknologi yang digunakan</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Petunjuk menjalankan Aplikasi</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
+---
 
-You might want to look into `config.json` to make change the port you want to use and set up a SSL certificate.
+## Petunjuk menjalankan Aplikasi
+
+Install node modules yang terdapat pada `package.json` sebelum menjalankan aplikasi
+Clone repositori ini ke komputer Anda git clone **`https://github.com/franskbarek/nodejs-several-functionality.git`**
+Masuk ke dalam direktori aplikasi `cd nodejs-several-functionality`
+Install dependensi `npm install` atau `yarn` jika menggunakan yarn
+Jalankan aplikasi `npm run start` atau `yarn start` jika menggunakan yarn
+Aplikasi akan berjalan pada **`http://localhost:8080`** dan siap digunakan
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
@@ -55,10 +68,12 @@ Once the dependencies are installed, you can run `npm start` to start the applic
 
 To give yourself administrator permissions on the chat, you will have to type `/role [your-name]` in the app console.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ---
 
-## License
+#### There are 3 admin levels:
 
-> You can check out the full license [here](https://github.com/IgorAntun/node-chat/blob/master/LICENSE)
-
-This project is licensed under the terms of the **MIT** license.
+- **Helper:** Can delete chat messages
+- **Moderator:** The above plus the ability to kick and ban users
+- **Administrator:** All the above plus send global alerts and promote/demote users
