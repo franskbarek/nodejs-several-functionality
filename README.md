@@ -8,7 +8,7 @@
 
 Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan teknologi Express.js.
 
-![API Preview](https://www.udrop.com/7LqA/testing-all.jpg)
+![API Preview](./public/images/testing-all.jpg)
 
 <!-- TABLE OF CONTENTS -->
 <details>
