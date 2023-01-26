@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 [![GitHub Stars](https://img.shields.io/github/stars/franskbarek/nodejs-several-functionality.svg)](https://github.com/franskbarek/nodejs-several-functionality) [![GitHub Issues](https://img.shields.io/github/issues/franskbarek/nodejs-several-functionality.svg)](https://github.com/franskbarek/nodejs-several-functionality/issues)
 
 # Dokumentasi Teknis
@@ -8,29 +10,18 @@ Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan framework N
 
 ![Chat Preview](http://i.imgur.com/lgRe8z4.png)
 
-## Teknologi yang digunakan
-
-- yarn
-- node.js
-- express.js
-- jest
-- supertest
-- postman
-
----
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Tabel konten</summary>
   <ol>
     <li>
-      <a href="#about-the-app">Tentang Aplikasi</a>
+      <a href="#tentang-aplikasi">Tentang Aplikasi</a>
       <ul>
-        <li><a href="#built-with">Teknologi yang digunakan</a></li>
+        <li><a href="#teknologi-yang-digunakan">Teknologi yang digunakan</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Petunjuk menjalankan Aplikasi</a>
+      <a href="#petunjuk-menjalankan-aplikasi">Petunjuk menjalankan Aplikasi</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
@@ -47,26 +38,30 @@ Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan framework N
 
 ---
 
-## Petunjuk menjalankan Aplikasi
+## Teknologi yang digunakan
 
-Install node modules yang terdapat pada `package.json` sebelum menjalankan aplikasi
-Clone repositori ini ke komputer Anda git clone **`https://github.com/franskbarek/nodejs-several-functionality.git`**
-Masuk ke dalam direktori aplikasi `cd nodejs-several-functionality`
-Install dependensi `npm install` atau `yarn` jika menggunakan yarn
-Jalankan aplikasi `npm run start` atau `yarn start` jika menggunakan yarn
-Aplikasi akan berjalan pada **`http://localhost:8080`** dan siap digunakan
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- yarn
+- node.js
+- express.js
+- jest
+- supertest
+- postman
 
 ---
 
-## Usage
+## Petunjuk menjalankan Aplikasi
 
-After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
+Install node modules yang terdapat pada `package.json` sebelum menjalankan aplikasi
 
-Once the dependencies are installed, you can run `npm start` to start the application. You will then be able to access it at localhost:3000
+Clone repositori ini ke komputer Anda git clone **`https://github.com/franskbarek/nodejs-several-functionality.git`**
 
-To give yourself administrator permissions on the chat, you will have to type `/role [your-name]` in the app console.
+Masuk ke dalam direktori aplikasi `cd nodejs-several-functionality`
+
+Install dependensi `npm install` atau `yarn` jika menggunakan yarn
+
+Jalankan aplikasi `npm run start` atau `yarn start` jika menggunakan yarn
+
+Aplikasi akan berjalan pada **`http://localhost:8080`** dan siap digunakan
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
