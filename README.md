@@ -21,7 +21,7 @@ Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan teknologi E
       </ul>
     </li>
     <li>
-      <a href="#petunjuk-menjalankan-aplikasi">Petunjuk menjalankan Aplikasi</a>
+      <a href="#instalasi">Instalasi</a>
     </li>
     <li>
       <a href="#aplikasi-penjadwalan-kamar-operasi">Aplikasi Penjadwalan Kamar Operasi</a>
@@ -55,7 +55,7 @@ Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan teknologi E
 
 ---
 
-## Petunjuk menjalankan Aplikasi
+## Instalasi
 
 Install node modules yang terdapat pada `package.json` sebelum menjalankan aplikasi
 
@@ -73,8 +73,46 @@ Aplikasi akan berjalan pada **`http://localhost:8080`** dan siap digunakan
 
 ---
 
-#### There are 3 admin levels:
+## Aplikasi Penjadwalan Kamar Operasi
 
-- **Helper:** Can delete chat messages
-- **Moderator:** The above plus the ability to kick and ban users
-- **Administrator:** All the above plus send global alerts and promote/demote users
+Ketentuan apliksi...
+
+### Penggunaan
+
+Misal gunakan postman...
+
+Untuk melakukan booking kamar operasi, gunakan permintaan POST ke alamat `localhost:8080/bookingkamaroperasi/{bookingdate}/{durasi}`
+
+Contoh:
+
+POST http://localhost:8080/bookingkamaroperasi/2023-01-30T10:00:00.00Z/2
+
+Response ketika berhasil:
+
+`true`
+
+Response ketika gagal:
+
+`false`
+
+Untuk melihat seluruh jadwal operasi, gunakan permintaan GET ke alamat `localhost:8080/bookingkamaroperasi`
+
+Contoh:
+
+POST http://localhost:8080/bookingkamaroperasi
+
+Response:
+
+## Unit Testing
+
+### Jest
+
+---
+
+## Aplikasi Penggajian
+
+### Unit Testing
+
+### Postman
+
+### Jest
