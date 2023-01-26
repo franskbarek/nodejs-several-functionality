@@ -1,14 +1,14 @@
 <a name="readme-top"></a>
 
-[![GitHub Stars](https://img.shields.io/github/stars/franskbarek/nodejs-several-functionality.svg)](https://github.com/franskbarek/nodejs-several-functionality) [![GitHub Issues](https://img.shields.io/github/issues/franskbarek/nodejs-several-functionality.svg)](https://github.com/franskbarek/nodejs-several-functionality/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/franskbarek/nodejs-several-functionality.svg)](https://github.com/franskbarek/nodejs-several-functionality/stars) [![GitHub Issues](https://img.shields.io/github/issues/franskbarek/nodejs-several-functionality.svg)](https://github.com/franskbarek/nodejs-several-functionality/issues)
 
 # Dokumentasi Teknis
 
 ## Tentang Aplikasi
 
-Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan framework Node.js menggunkan Express.js.
+Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan teknologi Express.js.
 
-![Chat Preview](http://i.imgur.com/lgRe8z4.png)
+![Chat Preview](https://www.udrop.com/7Lqz/testing-all.png)
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -22,17 +22,21 @@ Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan framework N
     </li>
     <li>
       <a href="#petunjuk-menjalankan-aplikasi">Petunjuk menjalankan Aplikasi</a>
+    </li>
+    <li>
+      <a href="#aplikasi-penjadwalan-kamar-operasi">Aplikasi Penjadwalan Kamar Operasi</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#mulai-membuat-jadwal">Mulai</a></li>
+        <li><a href="#unit-testing-booking">Unit Testing</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li>
+      <a href="#aplikasi-penggajian">Aplikasi Penggajian</a>
+      <ul>
+        <li><a href="#mulai-cek-gaji">Mulai</a></li>
+        <li><a href="#unit-testing-gaji">Unit Testing</a></li>
+      </ul>
+    </li>
   </ol>
 </details>
 
@@ -46,6 +50,8 @@ Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan framework N
 - jest
 - supertest
 - postman
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
