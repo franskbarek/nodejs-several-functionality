@@ -26,15 +26,15 @@ Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan teknologi E
     <li>
       <a href="#aplikasi-penjadwalan-kamar-operasi">Aplikasi Penjadwalan Kamar Operasi</a>
       <ul>
-        <li><a href="#mulai-membuat-jadwal">Mulai</a></li>
-        <li><a href="#unit-testing-booking">Unit Testing</a></li>
+        <li><a href="#penggunaan">Penggunaan</a></li>
+        <li><a href="#unit-testing">Unit Testing</a></li>
       </ul>
     </li>
     <li>
       <a href="#aplikasi-penggajian">Aplikasi Penggajian</a>
       <ul>
-        <li><a href="#mulai-cek-gaji">Mulai</a></li>
-        <li><a href="#unit-testing-gaji">Unit Testing</a></li>
+        <li><a href="#penggunaan">Penggunaan</a></li>
+        <li><a href="#unit-testing">Unit Testing</a></li>
       </ul>
     </li>
   </ol>
@@ -55,33 +55,35 @@ Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan teknologi E
 
 ---
 
-## Instalasi
+## Installasi
 
-Install node modules yang terdapat pada `package.json` sebelum menjalankan aplikasi
+Install node modules yang terdapat pada **`package.json`** sebelum menjalankan aplikasi
 
-Clone repositori ini ke komputer Anda git clone **`https://github.com/franskbarek/nodejs-several-functionality.git`**
+Clone repositori ini ke komputer Anda git clone `https://github.com/franskbarek/nodejs-several-functionality.git`
 
-Masuk ke dalam direktori aplikasi `cd nodejs-several-functionality`
+Masuk ke dalam direktori aplikasi **`cd nodejs-several-functionality`**
 
-Install dependensi `npm install` atau `yarn` jika menggunakan yarn
+Install dependensi **`npm install`** atau **`yarn`** jika menggunakan yarn
 
-Jalankan aplikasi `npm run start` atau `yarn start` jika menggunakan yarn
+Jalankan aplikasi **`npm run start`** atau **`yarn start`** jika menggunakan yarn
 
-Aplikasi akan berjalan pada **`http://localhost:8080`** dan siap digunakan
+Aplikasi akan berjalan pada http://localhost:8080 dan siap digunakan
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## Aplikasi Penjadwalan Kamar Operasi
+## 1. Aplikasi Penjadwalan Kamar Operasi
 
-Ketentuan apliksi...
+Untuk melakukan penjadwalan kamar operasi, aturannya adalah jarak antara satu operasi dengan operasi yang lain minimal 2 jam. Jika
+seorang dokter ingin booking kamar operasi, harus menyampaikan tanggal dan jam kapan mau menggunakan kamar
+operasi, dan estimasi durasi operasi tersebut. Response dari API ada dalam body, berisi hanya 2 kemungkinan saja, true atau false.
 
 ### Penggunaan
 
-Misal gunakan postman...
+Untuk mulai menggunakan aplikasi dapat menggunakan API testing tool misal Postman, Insomnia dan lain-lain.
 
-Untuk melakukan booking kamar operasi, gunakan permintaan POST ke alamat `localhost:8080/bookingkamaroperasi/{bookingdate}/{durasi}`
+Untuk melakukan booking kamar operasi, gunakan permintaan POST ke alamat `http://localhost:8080/bookingkamaroperasi/{bookingdate}/{durasi}`
 
 Contoh:
 
@@ -95,24 +97,84 @@ Response ketika gagal:
 
 `false`
 
-Untuk melihat seluruh jadwal operasi, gunakan permintaan GET ke alamat `localhost:8080/bookingkamaroperasi`
+Untuk melihat seluruh jadwal operasi, gunakan permintaan GET ke alamat `http://localhost:8080/bookingkamaroperasi`
 
 Contoh:
 
-POST http://localhost:8080/bookingkamaroperasi
+GET http://localhost:8080/bookingkamaroperasi
 
-Response:
+Response ketika berhasil:
 
-## Unit Testing
-
-### Jest
-
----
-
-## Aplikasi Penggajian
+```
+[
+    {
+        "startTime": "2023-01-15T10:00:00.000Z",
+        "endTime": "2023-01-15T12:00:00.000Z",
+        "duration": 2
+    }
+]
+```
 
 ### Unit Testing
 
-### Postman
+Untuk menjalankan unit testing pada aplikasi penjadwalan kamar operasi jalankan perintah **`yarn test-booking`** pada terminal dan posisi direktori root
 
-### Jest
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## 2. Aplikasi Penggajian
+
+Untuk melakukan perhitungan gaji karyawan di berbagai negara, maka besar kemungkinan untuk membayar gaji pegawai di beberapa
+negara, dimana tiap-tiap negara memiliki regulasi penggajian yang berbeda beda. Katakanlah kita akan melakukan pembayaran gaji untuk
+karyawan di Indonesia dan di Vietnam. Gaji karyawan di Indonesia dalam Rupiah (IDR) dan karyawan di Vietnam dalam Dong (VND).
+Goalnya pada aplikasi ini adalah menghitung gaji perbulan, pertahun serta pajak pertahun dan perbulan dengan ketentuan pajak tiap-tiap negara dan status pernikahan. Dalam response body akan fokus mengembalikan response pajak perbulan saja.
+
+### Penggunaan
+
+Untuk mulai menggunakan aplikasi dapat menggunakan API testing tool misal Postman, Insomnia dan lain-lain.
+
+Untuk melakukan penggajian, gunakan permintaan POST ke alamat `http://localhost:8080/hitunggaji`
+
+Contoh:
+
+POST http://localhost:8080/hitunggaji
+
+Request body:
+
+```
+{
+  "employee": {
+    "name": "John",
+    "id": "123",
+    "nationality": "Indonesia",
+    "marital_status": "K1"
+  },
+  "komponengaji": [
+    {
+      "name": "Basic Salary",
+      "amount": 25000000
+    },
+    {
+      "name": "Allowance",
+      "amount": 5000000
+    }
+  ]
+}
+```
+
+Response ketika berhasil:
+
+```
+{
+    "pajak_bulanini": "3.146.000"
+}
+```
+
+### Unit Testing
+
+Untuk menjalankan unit testing pada aplikasi penjadwalan kamar operasi jalankan perintah **`yarn test-penggajian`** pada terminal dan posisi direktori root
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---

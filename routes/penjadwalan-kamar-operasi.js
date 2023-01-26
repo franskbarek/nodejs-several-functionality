@@ -46,7 +46,7 @@ router.post("/:bookingdate/:durasi", async (req, res) => {
 // get bookings
 router.get("/", (req, res) => {
   try {
-    res.status(200).json(true);
+    res.status(200).json(scheduledOperations);
   } catch (err) {
     res.status(500).json(err.message);
   }
