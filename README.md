@@ -259,11 +259,11 @@ Misalnya seorang pasien yang lahir tanggal 28 Oktober 1983, maka pada tanggal 3 
 
 Untuk mulai mengopersikan aplikasi dapat menggunakan API testing tool misal Postman, Insomnia dan lain-lain.
 
-Untuk melakukan perhitungan umur pasien, gunakan permintaan GET ke alamat `http://localhost:8080/calculateage`
+Untuk melakukan perhitungan umur pasien, gunakan permintaan GET ke alamat `http://localhost:8080/calculateage/{dateofbirth}`
 
 Contoh:
 
-GET http://localhost:8080/calculateage
+GET http://localhost:8080/calculateage/28-10-1983
 
 Request body:
 
