@@ -21,30 +21,15 @@ Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan teknologi E
       </ul>
     </li>
     <li>
-      <a href="#instalasi">Instalasi</a>
+      <a href="#installasi">Installasi</a>
     </li>
     <li>
-      <a href="#penjadwalan-kamar-operasi">1. Penjadwalan Kamar Operasi</a>
+      <a href="#aplikasi">Aplikasi</a>
       <ul>
-        <li><a href="#penggunaan-penjadwalan">Penggunaan</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#penggajian">2. Penggajian</a>
-      <ul>
-        <li><a href="#penggunaan-penggajian">Penggunaan</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#mendeteksi-alergi-obat">3. Mendeteksi Alergi Obat</a>
-      <ul>
-        <li><a href="#penggunaan-mendeteksi">Penggunaan</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#memperbarui-data-secara-otomatis-dan-terjadwal">4. Memperbarui Data secara Otomatis dan Terjadwal</a>
-      <ul>
-        <li><a href="#penggunaan-memperbarui">Penggunaan</a></li>
+        <li><a href="#penjadwalan-kamar-operasi">Penjadwalan Kamar Operasi</a></li>
+        <li><a href="#penggajian">Penggajian</a></li>
+        <li><a href="#mendeteksi-alergi-obat">Mendeteksi Alergi Obat</a></li>
+        <li><a href="#memperbarui-data-secara-otomatis-dan-terjadwal">Memperbarui Data Secara Otomatis dan Terjadwal</a></li>
       </ul>
     </li>
   </ol>
@@ -83,7 +68,9 @@ Aplikasi akan berjalan pada http://localhost:8080 dan siap digunakan
 
 ---
 
-## 1. Penjadwalan Kamar Operasi
+## Aplikasi
+
+## Penjadwalan Kamar Operasi
 
 Untuk melakukan penjadwalan kamar operasi, aturannya adalah jarak antara satu operasi dengan operasi yang lain minimal 2 jam. Jika
 seorang dokter ingin booking kamar operasi, harus menyampaikan tanggal dan jam kapan mau menggunakan kamar
@@ -133,7 +120,7 @@ Untuk menjalankan unit testing pada aplikasi penjadwalan kamar operasi jalankan 
 
 ---
 
-## 2. Penggajian
+## Penggajian
 
 Untuk melakukan perhitungan gaji karyawan di berbagai negara, maka besar kemungkinan untuk membayar gaji pegawai di beberapa
 negara, dimana tiap-tiap negara memiliki regulasi penggajian yang berbeda beda. Katakanlah kita akan melakukan pembayaran gaji untuk
@@ -189,7 +176,7 @@ Untuk menjalankan unit testing pada aplikasi penjadwalan kamar operasi jalankan 
 
 ---
 
-## 3. Mendeteksi Alergi Obat
+## Mendeteksi Alergi Obat
 
 Tujuan aplikasi ini adalah dapat mengevaluasi potensi alergi obat pada seorang pasien atas sebuah resep.
 Katakanlah pasien anak atas nama Bejo, mengidap alergi ibuprofen. Setelah konsultasi rawat jalan
@@ -257,7 +244,7 @@ Untuk menjalankan unit testing pada aplikasi deteksi alergi obat jalankan perint
 
 ---
 
-## 4. Memperbarui Data secara Otomatis dan Terjadwal
+## Memperbarui Data secara Otomatis dan Terjadwal
 
 Dalam dunia medis, umur merupakan data yang penting. Tidak seperti orang awam yang menyebut umur dalam magnitude tahun, dalam
 dunia medis, umur sangat detail yakni terdiri dari Tahun Bulan dan Hari.
