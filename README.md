@@ -6,7 +6,14 @@
 
 ## Tentang Aplikasi
 
-Merupakan Web API sederhana dari beberapa fungsi logika, menggunakan teknologi Express.js.
+Merupakan Kumpulan Web API, menggunakan teknologi Express.js.
+
+Berikut adalah list API dan fitur yang dimiliki masing-masing:
+
+- Penjadwalan Kamar Operasi. Fitur yang tersedia di aplikasi ini yaitu dapat menambahkan permintaan booking kamar operasi dan juga melihat seluruh jadwal operasi.
+- Penggajian. Fitur yang tersedia di aplikasi ini yaitu dapat menambahkan data karyawan berupa gaji untuk dapat di kalkulasi secara detail.
+- Mendeteksi Alergi Obat. Fitur yang tersedia di aplikasi ini yaitu dapat melakukan validasi apakah resep obat memiliki dampak alergi ke pasien atau tidak.
+- Memperbarui Data Secara Otomatis dan Terjadwal. Fitur yang tersedia di aplikasi ini yaitu dapat melakukan perhitungan umur secara detail dan akurat mencakup tahun bulan dan hari.
 
 ![API Preview](./public/images/testing-all.jpg)
 
