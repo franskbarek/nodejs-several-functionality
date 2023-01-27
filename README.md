@@ -122,10 +122,8 @@ Untuk menjalankan unit testing pada aplikasi penjadwalan kamar operasi jalankan 
 
 ## Penggajian
 
-Untuk melakukan perhitungan gaji karyawan di berbagai negara, maka besar kemungkinan untuk membayar gaji pegawai di beberapa
-negara, dimana tiap-tiap negara memiliki regulasi penggajian yang berbeda beda. Katakanlah kita akan melakukan pembayaran gaji untuk
-karyawan di Indonesia dan di Vietnam. Gaji karyawan di Indonesia dalam Rupiah (IDR) dan karyawan di Vietnam dalam Dong (VND).
-Goalnya pada aplikasi ini adalah menghitung gaji perbulan, pertahun serta pajak pertahun dan perbulan dengan ketentuan pajak tiap-tiap negara dan status pernikahan. Dalam response body akan fokus mengembalikan response pajak perbulan saja.
+Untuk melakukan perhitungan gaji karyawan di berbagai negara, maka besar kemungkinan tiap-tiap negara memiliki regulasi penggajian yang berbeda beda. Katakanlah kita akan melakukan pembayaran gaji untuk karyawan di Indonesia dan di Vietnam.
+Gaji karyawan di Indonesia dalam Rupiah (IDR) dan karyawan di Vietnam dalam Dong (VND). Tujuan pada aplikasi ini adalah menghitung gaji netto dan bruto perbulan, pertahun serta pajak perbulan dan pertahun dengan ketentuan pajak tiap-tiap negara dan status pernikahan. Dalam response body akan fokus mengembalikan pajak perbulan saja.
 
 ### Penggunaan
 
@@ -244,7 +242,7 @@ Untuk menjalankan unit testing pada aplikasi deteksi alergi obat jalankan perint
 
 ---
 
-## Memperbarui Data secara Otomatis dan Terjadwal
+## Memperbarui Data Secara Otomatis dan Terjadwal
 
 Dalam dunia medis, umur merupakan data yang penting. Tidak seperti orang awam yang menyebut umur dalam magnitude tahun, dalam
 dunia medis, umur sangat detail yakni terdiri dari Tahun Bulan dan Hari.
