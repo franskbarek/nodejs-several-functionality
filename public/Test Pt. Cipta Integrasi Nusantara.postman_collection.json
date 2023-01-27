@@ -1,0 +1,458 @@
+{
+	"info": {
+		"_postman_id": "906210d4-06bf-4c61-af64-4d87c304bd3b",
+		"name": "Test Pt. Cipta Integrasi Nusantara",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17475098"
+	},
+	"item": [
+		{
+			"name": "1. Penjadwalan kamar operasi",
+			"item": [
+				{
+					"name": "Booking jam 10:00",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test case 1",
+									"pm.test('#TEST CASE1: Booking kamar operasi jam 10:00 berhasil', () => {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"pm.test('#TEST CASE1: Response harus mengembalikan hasil dan status true', () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.status).to.Equal(true);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookingkamaroperasi/2023-01-15T10:00:00.00Z/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookingkamaroperasi",
+								"2023-01-15T10:00:00.00Z",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking jam 15:00",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test case 2",
+									"pm.test('#TEST CASE2: Booking kamar operasi jam 15:00 berhasil', () => {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"pm.test('#TEST CASE2: Response harus mengembalikan hasil dan status true', () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.status).to.equals(true);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookingkamaroperasi/2023-01-15T15:00:00.00Z/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookingkamaroperasi",
+								"2023-01-15T15:00:00.00Z",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking jam 18:00",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test case 3",
+									"pm.test('#TEST CASE3: Booking kamar operasi jam 18:00 gagal', () => {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test('#TEST CASE3: Response harus mengembalikan status false', () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.status).to.equals(false);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookingkamaroperasi/2023-01-15T15:00:00.00Z/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookingkamaroperasi",
+								"2023-01-15T15:00:00.00Z",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking jam 07:00",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test case 4",
+									"pm.test('#TEST CASE4: Booking kamar operasi jam 07:00 gagal', () => {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test('#TEST CASE4: Response harus mengembalikan status false', () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.status).to.equals(false);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookingkamaroperasi/2023-01-15T07:00:00.00Z/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookingkamaroperasi",
+								"2023-01-15T07:00:00.00Z",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get bookings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// use the `pm.*` API to write your test",
+									"// the `pm.test()` method accepts 2 parameters",
+									"// the first parameter is the name of your test (be descriptive)",
+									"// the second parameter is a function whereby if any assertions within your function fail, then the test will fail",
+									"",
+									"pm.test(\"Get bookings\", function () {",
+									"    // make an assertion",
+									"    // if your assertion throws an error, this test will fail",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bookingkamaroperasi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bookingkamaroperasi"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2. Penggajian",
+			"item": [
+				{
+					"name": "hitunggaji karyawan indonesia",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"employee\": {\n    \"name\": \"John\",\n    \"id\": \"123\",\n    \"nationality\": \"Indonesia\",\n    \"marital_status\": \"K1\"\n  },\n  \"komponengaji\": [\n    {\n      \"name\": \"Basic Salary\",\n      \"amount\": 25000000\n    },\n    {\n      \"name\": \"Allowance\",\n      \"amount\": 5000000\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/hitunggaji",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hitunggaji"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hitunggaji karyawan vietnam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"employee\": {\n    \"name\": \"Sam\",\n    \"id\": \"321\",\n    \"nationality\": \"Vietnam\",\n    \"marital_status\": \"K0\"\n  },\n  \"komponengaji\": [\n    {\n      \"name\": \"Basic Salary\",\n      \"amount\": 25000000\n    },\n    {\n      \"name\": \"Allowance\",\n      \"amount\": 5000000\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/hitunggaji",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hitunggaji"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all penggajian",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hitunggaji",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hitunggaji"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3. Mendeteksi alergi obat",
+			"item": [
+				{
+					"name": "Validasi alergi obat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pasien\": {\n    \"nama\": \"Bejo\",\n    \"alergi\": [\n      \"ibuprofen\"\n    ]\n  },\n  \"resep\": [\n    {\n      \"obat\": \"Proris Sirup 60ml\",\n      \"kandungan\": [\n        \"ibuprofen\"\n      ]\n    },\n    {\n      \"obat\": \"Paratusin Sirup 60ml\",\n      \"kandungan\": [\n        \"paracetamol 125mg\",\n        \"pseudoepedrid 7.5mg\",\n        \"noscapine 10mg\",\n        \"ctm 0.5 mg\",\n        \"guafenisin 25mg\",\n        \"succus liquiritae 125 ethanol 10%\"\n      ]\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/validasialergiobat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"validasialergiobat"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4. Kalkulasi umur",
+			"item": [
+				{
+					"name": "birth 28-10-1983 currentdate 03-10-2022",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentDate\": \"2022-10-03\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculateage/28-10-1983",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculateage",
+								"28-10-1983"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "birth 28-10-1983 currentdate 04-10-2022",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentDate\": \"2022-10-04\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculateage/28-10-1983",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculateage",
+								"28-10-1983"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "birth 13-11-1982 currentdate 03-10-2022",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentDate\": \"2022-10-03\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculateage/13-11-1982",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculateage",
+								"13-11-1982"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "birth 13-11-1982 currentdate 04-10-2022",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentDate\": \"2022-10-04\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculateage/13-11-1982",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculateage",
+								"13-11-1982"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

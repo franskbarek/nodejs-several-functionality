@@ -2,7 +2,7 @@
 
 [![GitHub Stars](https://img.shields.io/github/stars/franskbarek/nodejs-several-functionality.svg)](https://github.com/franskbarek/nodejs-several-functionality/stars) [![GitHub Issues](https://img.shields.io/github/issues/franskbarek/nodejs-several-functionality.svg)](https://github.com/franskbarek/nodejs-several-functionality/issues)
 
-# Dokumentasi Teknis
+# Nodejs App
 
 ## Tentang Aplikasi
 
@@ -286,3 +286,6 @@ Untuk menjalankan unit testing pada aplikasi perhitungan umur pasien jalankan pe
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
+
+**_Catatan_**
+_untuk menjalankan unit test seluruh aplikasi gunakan perintah **`yarn test-all`** dan untuk file hasil export postman-colection.json silahkan download pada dir **`./public`**_
