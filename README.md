@@ -15,7 +15,7 @@ Berikut adalah list API dan fitur yang dimiliki masing-masing:
 - Mendeteksi Alergi Obat. Fitur yang tersedia di aplikasi ini yaitu dapat melakukan validasi apakah resep obat memiliki dampak alergi ke pasien atau tidak.
 - Memperbarui Data Secara Otomatis dan Terjadwal. Fitur yang tersedia di aplikasi ini yaitu dapat melakukan perhitungan umur secara detail dan akurat mencakup tahun bulan dan hari.
 
-![API Preview](./public/images/testing-all.jpg)
+![API Preview](./public/images/code-example.jpg)
 
 <!-- TABLE OF CONTENTS -->
 <details>
